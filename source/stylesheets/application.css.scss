@@ -1,12 +1,47 @@
 
-@import "bootstrap-sprockets";
-@import "bootstrap";
-
 $black: #010101;
 $brand-primary: #fe7732;
 
+$border-radius-base: 0px;
+$border-radius-large: 0px;
+$border-radius-small: 0px;  
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
 .carousel-image {
   width: 100%;
+}
+
+.carousel-caption > .box {
+  width: 100%;
+  margin: 0 auto;
+  border: 3px solid white;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.container .carousel-control {
+  box-shadow: none;
+  background: none;
+
+  top: auto;
+  bottom: 120px;
+
+}
+
+h1 {
+  font-weight: 200;
+  font-size: 50px;
+  color: inherit;
+  text-transform: uppercase;
+  margin: 0;
+  letter-spacing: 1px;
+}
+
+.tagline {
+  font-size: 30px;
+  font-weight: 200;
 }
 
 .navbar-main {
