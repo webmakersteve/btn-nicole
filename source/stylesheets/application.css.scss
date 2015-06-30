@@ -1,0 +1,77 @@
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+$black: #010101;
+$brand-primary: #fe7732;
+
+.carousel-image {
+  width: 100%;
+}
+
+.navbar-main {
+  @include gradient-vertical(rgba(255, 255, 255, 0.8), transparent);
+  height: 115px;
+
+  .nav {
+    @extend .nav-justified;
+    > li {
+      > a {
+        color: $black;
+        line-height: 115px;
+
+        &.navbar-brand {
+          margin: 0;
+          > img {
+            display: inline;
+          }
+        }
+
+        &:hover, &:focus, &:active, &:focus:active {
+          background: transparent;
+          color: $brand-primary;
+        }
+      }
+
+      &.active > a {
+        color: $brand-primary;
+      }
+    }
+  }
+}
+
+.heart {
+  &:after {
+    content: image-url('heart.png');
+    display: inline;
+    width: 22px;
+    height: 19px;
+    margin-left: 4px;
+  }
+}
+
+h2 {
+  color: $black;
+  text-transform: uppercase;
+  margin: 0;
+  font-size: 40px;
+  padding: 22px 0;
+  font-weight: 200;
+  letter-spacing: 1px;
+  
+  &:after {
+    width: 200px;
+    height: 1px;
+    background-color: $brand-primary;
+    content: "";
+    margin: 0 auto;
+    display: block;
+    margin-top: 25px;
+  }
+}
+
+h3 {
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
