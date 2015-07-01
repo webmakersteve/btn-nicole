@@ -1,0 +1,34 @@
+<div class="row">
+  <div class="col-md-10 col-md-offset-1">
+
+    <div class="panel-group" id="faq-accordion" role="tablist" aria-multiselectable="true">
+      <% [
+        {
+          heading: "HOW DO I KNOW WHICH OPTION IS RIGHT FOR ME?",
+          body: "If you are not sure which option will best fit you and your pups lifestyle, just ask! We are on top of things! Which means we usually respond within twenty-four hours or less. You can contact us through email or by phone via our Contact page."
+        },
+        {
+          heading: "HOW DO I KNOW WHICH OPTION IS RIGHT FOR ME?",
+          body: "If you are not sure which option will best fit you and your pups lifestyle, just ask! We are on top of things! Which means we usually respond within twenty-four hours or less. You can contact us through email or by phone via our Contact page."
+        }
+      ].each_with_index do |item, index| %>
+      <div class="panel panel-default">
+        <div class="panel-heading" role="tab" id="heading-<%= index %>">
+          <h4 class="panel-title">
+            <a role="button" data-toggle="collapse" data-parent="#faq-accordion" href="#faq-<%= index %>">
+              Q:  <%= item[:heading] %>
+            </a>
+          </h4>
+        </div>
+        <div id="faq-<%= index %>" class="panel-collapse collapse <%= 'in' if index == 0 %>" role="tabpanel">
+          <div class="panel-body">
+            A: <%= item[:body] %>
+          </div>
+        </div>
+      </div>
+      <% end %>
+    </div>
+
+  </div>
+
+</div>

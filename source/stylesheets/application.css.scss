@@ -30,6 +30,36 @@ $border-radius-small: 0px;
 
 }
 
+.carousel-image {
+  height: 400px;
+  height: 90vh;
+  width: 100%;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+section {
+  figure {
+    margin-right: 10px;
+  }
+  padding: 20px 0;
+}
+
+.form-control {
+  background-color: #898989;
+  @include placeholder(white);
+  color: darken(white, 10%);
+  border-radius: 3px;
+  border: 0px;
+  font-size: 15px;
+  padding-top: 15px;
+}
+
+input.form-control {
+  height: 40px;
+}
+
 h1 {
   font-weight: 200;
   font-size: 50px;
@@ -37,6 +67,13 @@ h1 {
   text-transform: uppercase;
   margin: 0;
   letter-spacing: 1px;
+}
+
+h4 {
+  color: $brand-primary;
+  margin: 0;
+  font-size: 20px;
+  text-transform: uppercase;
 }
 
 .tagline {
@@ -85,6 +122,36 @@ h1 {
   }
 }
 
+.featured-sites {
+  figcaption {
+    color: $brand-primary;
+    padding-top: 15px;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+
+  figure > img {
+    width: 100%;
+  }
+}
+
+.btn-standard {
+  font-size: 24px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  font-weight: 300;
+
+  border-radius: 3px;
+  border: 0px;
+
+  color: white;
+  background-color: $brand-primary;
+
+  box-shadow: 0px 4px 5px 0px rgba(0,0,0,0.75);
+
+}
+
 h2 {
   color: $black;
   text-transform: uppercase;
@@ -109,4 +176,47 @@ h3 {
   font-size: 20px;
   font-weight: 500;
   letter-spacing: 1px;
+  margin-bottom: 30px;
+}
+
+footer {
+  color: #000000;
+  font-size: 20px;
+  padding-bottom: 40px;
+  font-weight: bold;
+  padding-top: 40px;
+}
+
+#faq-accordion {
+  .panel-group {
+
+  }
+
+  .panel {
+    border: 0px;
+    box-shadow: none;
+    > .panel-heading {
+      background: none;
+      color: $brand-primary;
+
+      a {
+        &:hover, &:focus, &:active {
+          text-decoration: none;
+          color: black;
+        }
+      }
+    }
+
+    > .panel-collapse {
+      padding: 10px 36px;
+      .panel-body {
+        color: white;
+        background-color: #7d7d7d;
+        font-size: 14px;
+        line-height: 15px;
+        border: 0px;
+        padding: 15px 15px 20px;
+      }
+    }
+  }
 }
