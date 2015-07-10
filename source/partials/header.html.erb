@@ -9,20 +9,23 @@
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>
+			<div class="navbar-brand">
+				<%= image_tag('logo.png') %>
+			</div>
 		</div>
 
 		<!-- Collect the nav links, forms, and other content for toggling -->
-		<div class="collapse navbar-collapse navbar-ex1-collapse">
+		<div class="collapse navbar-collapse navbar-ex1-collapse" id="main-nav">
 			<ul class="nav navbar-nav">
-				<li class="active"><a href="#">Home</a></li>
-				<li><a href="#">About</a></li>
-				<li><a href="#">Services</a></li>
-				<li><a class="brandd" href="#">
+				<li class="active"><a href="#carousel-id">Home</a></li>
+				<li><a href="#about">About</a></li>
+				<li><a href="#services">Services</a></li>
+				<li class="hidden-xs"><a class="brandd" href="#">
 					<%= image_tag('logo.png') %>
 				</a></li>
-				<li><a href="#">Contact</a></li>
-				<li><a href="#">FAQs</a></li>
-				<li><a href="#" class="heart">Sites We</a></li>
+				<li><a href="#contact">Contact</a></li>
+				<li><a href="#faqs">FAQs</a></li>
+				<li><a href="#sites" class="heart">Sites We</a></li>
 			</ul>
 		</div><!-- /.navbar-collapse -->
 

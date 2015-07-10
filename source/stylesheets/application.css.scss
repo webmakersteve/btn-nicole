@@ -220,3 +220,48 @@ footer {
     }
   }
 }
+
+@media (max-width: $screen-xs-max) {
+  .navbar-main .nav {
+    margin: 0;
+    margin-top: 50px;
+    > li {
+      > a { 
+        line-height: 20px;
+        border: 2px solid white !important;
+        color: white;
+        background-color: $gray;
+
+      }
+
+      &.active, &:hover {
+        > a {
+          background-color: $brand-primary;
+          color: white;
+        }
+      }
+    }
+
+  }
+  .icon-bar {
+    background-color: $brand-primary;
+  }
+  .thumbnail.pull-left {
+    float: none !important;
+    img {
+      width: 100%;
+    }
+  }
+
+  .im-the-map {
+    &, #gmap_canvas {
+      width: 100% !important;
+    }
+    margin-bottom: 20px;
+  }
+
+  figcaption {
+    padding-bottom: 15px;
+    min-height: 160px;
+  }
+}

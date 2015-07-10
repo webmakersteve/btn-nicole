@@ -1,10 +1,14 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
   <head>
     <meta charset="utf-8">
 
     <!-- Always force latest IE rendering engine or request Chrome Frame -->
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width">
 
     <!-- Use title if it's in the page YAML frontmatter -->
     <title><%= current_page.data.title || "Back to Nature Petcare" %></title>
@@ -13,7 +17,7 @@
     <%= javascript_include_tag  "application" %>
   </head>
 
-  <body class="<%= page_classes %>">
+  <body class="<%= page_classes %>" data-spy="scroll" data-target="#main-nav">
     <%= partial 'partials/header' %>
     <%= yield %>
   </body>
