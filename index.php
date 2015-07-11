@@ -1,74 +1,22 @@
-<!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
-  <head>
-    <meta charset="utf-8">
-
-    <!-- Always force latest IE rendering engine or request Chrome Frame -->
-    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
-    <meta name="viewport" content="width=device-width">
-
-    <!-- Use title if it's in the page YAML frontmatter -->
-    <title>Back to Nature Pet Care</title>
-
-    <link href="stylesheets/application.css" rel="stylesheet" type="text/css" />
-    <script src="javascripts/application.js" type="text/javascript"></script>
-  </head>
-
-  <body class="index" data-spy="scroll" data-target="#main-nav">
-    <nav class="navbar navbar-main navbar-fixed-top" role="navigation">
-	<!-- Brand and toggle get grouped for better mobile display -->
-	<div class="container">
-
-		<div class="navbar-header">
-			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-				<span class="sr-only">Toggle navigation</span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-			</button>
-			<div class="navbar-brand">
-				<img class="visible-xs" src="images/logo.png" />
-			</div>
-		</div>
-
-		<!-- Collect the nav links, forms, and other content for toggling -->
-		<div class="collapse navbar-collapse navbar-ex1-collapse" id="main-nav">
-			<ul class="nav navbar-nav">
-				<li class="active"><a href="#carousel-id">Home</a></li>
-				<li><a href="#about">About</a></li>
-				<li><a href="#services">Services</a></li>
-				<li class="hidden-xs"><a class="brandd" href="#">
-					<img src="images/logo.png" />
-				</a></li>
-				<li><a href="#contact">Contact</a></li>
-				<li><a href="#faqs">FAQs</a></li>
-				<li><a href="#sites" class="heart">Sites We</a></li>
-			</ul>
-		</div><!-- /.navbar-collapse -->
-
-	</div>
-</nav>
+<?php get_header(); ?>
     <div id="carousel-id" class="carousel slide" data-ride="carousel">
     <div class="carousel-inner">
         <div class="item active">
-			<div class="carousel-image" style="background-image: url('images/sliders/slide-1.png')"></div>
+			<div class="carousel-image" style="background-image: url('<?php echo get_stylesheet_directory_uri() ?>/images/sliders/slide-1.png')"></div>
         </div>
         <div class="item">
-			<div class="carousel-image" style="background-image: url('images/sliders/slide-1.png')"></div>
+			<div class="carousel-image" style="background-image: url('<?php echo get_stylesheet_directory_uri() ?>/images/sliders/slide-1.png')"></div>
         </div>
         <div class="item">
-			<div class="carousel-image" style="background-image: url('images/sliders/slide-1.png')"></div>
+			<div class="carousel-image" style="background-image: url('<?php echo get_stylesheet_directory_uri() ?>/images/sliders/slide-1.png')"></div>
         </div>
     </div>
     <div class="container">
     	<a class="right carousel-control" href="#carousel-id" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
 	    <div class="carousel-caption">
 	    	<div class="box">
-		        <h1>Back to Nature Pet Care</h1>
-		        <p class="tagline">Serving Pet Owners in Westchester County, NY.</p>
+		        <h1><?php echo bloginfo('name'); ?></h1>
+		        <p class="tagline"><?php echo bloginfo('description'); ?></p>
 	        </div>
 	    </div>
 	    <a class="left carousel-control" href="#carousel-id" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
@@ -83,7 +31,7 @@
 		<div class="row">
 			<div class="col-md-6">
 				<figure class="thumbnail pull-left">
-					<img src="images/nicole.png" />
+					<img src="<?php echo get_stylesheet_directory_uri() ?>/images/nicole.png" />
 				</figure>
 				<h4>My Name is Nicole Refino</h4>
 				<p>and I am the President of BTNPets.</p>
@@ -114,14 +62,14 @@
 		<div class="row">
 			<div class="col-md-6">
 				<figure class="thumbnail pull-left">
-					<img src="images/neighborhood-walks.png" />
+					<img src="<?php echo get_stylesheet_directory_uri() ?>/images/neighborhood-walks.png" />
 				</figure>
 				<h4>NEIGHBORHOOD WALKS</h4>
 				<p>Gone for most of the day? No one home to let the dog out, or go for a stroll so  your pup can feel the wind in his or her  fur? Well, you have come to the right  place! Neighborhood walks are leashed  walks within walking distance from your  home, lasting from 15 to 20minutes. This  option is perfect for pups that just need a  breather mid day, mid morning, or a  couple of hours before you get home from  work! And a little lovin' is always included,  gratis! (Because we love what we do!).</p>
 			</div>
 			<div class="col-md-6">
 				<figure class="thumbnail pull-left">
-					<img src="images/house-dogsitting.png" />
+					<img src="<?php echo get_stylesheet_directory_uri() ?>/images/house-dogsitting.png" />
 				</figure>
 				<h4>HOUSE AND DOG SITTING</h4>
 				<p>If you travel, EVER, this is a great option for  you! And is preferred by most clients (both  two-legged and four-legged). Who doesn't  appreciate going away knowing their pup  and home and just where you left them,  safe and sound?! We not only provide care for  your dog including a sleepover and three neighborhood walks (booked per twenty-four  hour periods), but also mail retrieval, and  feeding of other pets in your home.  .</p>
@@ -130,14 +78,14 @@
 		<div class="row">
 			<div class="col-md-6">
 				<figure class="thumbnail pull-left">
-					<img src="images/basic-training.png" />
+					<img src="<?php echo get_stylesheet_directory_uri() ?>/images/basic-training.png" />
 				</figure>
 				<h4>My BASIC TRAINING</h4>
 				<p>Starting with the basics is a GREAT START!  Even before you bring your pup home, there  are things you should know! We can help,  and guide through developing a strong  relationship with your pup and solidifying  the foundations of a healthy furry family!</p>
 			</div>
 			<div class="col-md-6">
 				<figure class="thumbnail pull-left">
-					<img src="images/with-ball.png" />
+					<img src="<?php echo get_stylesheet_directory_uri() ?>/images/with-ball.png" />
 				</figure>
 				<h4>RUNNING/HIKING</h4>
 				<p>Have an active dog that just can't get enough  of the outdoors? Do they let you know as soon  as you get home and "attempt" to relax? Or  maybe you just know what it means to be a dog... (in the best way possible, obviously) What we  mean is, you know Nature is a dogs best ally,  mud is a dogs best accessory, and there can  never be too many playdates at the park! Hikes  are, by far, our best option to get your pup back  to nature! Hikes are anywhere from 40 minutes to an hour and fifteen minutes of off leash play  time with the Back to Nature Pack! (pick up and  drop off is included!) And a little lovin' is always  included, gratis! (Because we love what we do!)</p>
@@ -146,7 +94,7 @@
 		<div class="row">
 			<div class="col-md-12">
 				<figure class="thumbnail pull-left">
-					<img src="images/health-diet.png" />
+					<img src="<?php echo get_stylesheet_directory_uri() ?>/images/health-diet.png" />
 				</figure>
 				<h4>HEALTH/FITNESS & DIET</h4>
 				<p>Although we do not currently offer a service for consultation on these things, it is at the top of  our list! Making sure your dog gets exercise and a little fresh air is only part of the story! There  are so many other ways to get Back to Nature. A healthy diet, and a healthy body are also very  important! We are looking into incorporating more diet and health related tools and consultation  into our available Services. We appreciate what our clients have to say, so you if you have any  suggestions or requests we welcome you to send them in on our Contact page! (We are always  looking to improve, and we always find our four-legged families always know best!)</p>
@@ -376,7 +324,7 @@
 			<div class="row">
 				<div class="col-md-3 col-xs-6 footer-site">
 					<figure class="figure">
-						<img class="img-responsive" src="images/holistic-food.png" />
+						<img class="img-responsive" src="<?php echo get_stylesheet_directory_uri() ?>/images/holistic-food.png" />
 						<figcaption>
 							HOLISTIC & NATURAL DOG DIETS, VACCINES, & REMEDIES FOR FLEAS
 						</figcaption>
@@ -384,7 +332,7 @@
 				</div>
 				<div class="col-md-3 col-xs-6 footer-site">
 					<figure class="figure">
-						<img class="img-responsive" src="images/adoption.png" />
+						<img class="img-responsive" src="<?php echo get_stylesheet_directory_uri() ?>/images/adoption.png" />
 						<figcaption>
 							SAVE A LIFE & ADOPT A HOMELESS PET  TODAY!
 						</figcaption>
@@ -392,7 +340,7 @@
 				</div>
 				<div class="col-md-3 col-xs-6 footer-site">
 					<figure class="figure">
-						<img class="img-responsive" src="images/westchester-parks.png" />
+						<img class="img-responsive" src="<?php echo get_stylesheet_directory_uri() ?>/images/westchester-parks.png" />
 						<figcaption>
 							WESTCHESTER HAS OVER 50 PARKS & REC AREAS TO EXPLORE. CHECK THEM OUT!
 						</figcaption>
@@ -400,7 +348,7 @@
 				</div>
 				<div class="col-md-3 col-xs-6 footer-site">
 					<figure class="figure">
-						<img class="img-responsive" src="images/cesar.png" />
+						<img class="img-responsive" src="<?php echo get_stylesheet_directory_uri() ?>/images/cesar.png" />
 						<figcaption>
 							DOG APPROVED PEOPLE FOOD . . .& OTHER TIPS FROM CESAR MILLAN
 						</figcaption>
@@ -409,17 +357,4 @@
 			</div>
 		</div></div>
 	</section>
-	<footer>
-		<p class="text-center">As you can tell, we here at BTN Pet Care love nature and we like to give back. So check out  this site where "The Green Living Guy" Seth Leitman  (a green living expert, a green living  news reporter, a green living guru,  and an electric car expert) has a lot of tips on how you can</p>
-	</footer>
-</div><!-- .welcome -->
-
-
-
-
-
-
-
-
-  </body>
-</html>
+<?php get_footer(); ?>
