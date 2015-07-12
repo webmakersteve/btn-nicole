@@ -125,26 +125,24 @@ add_action( 'wp_enqueue_scripts', 'btn_nicole_scripts' );
  */
 
 function maybe_form($name, $default = '') {
-	return isset($_POST[$name]) ? $_POST[$name] : $default;
+	return (isset($_POST[$name]) || empty($_POST[$name])) ? $_POST[$name] : $default;
 }
 
 function btn_nicole_email_message($name, $address, $email, $message) {
 	return sprintf(
-	"
-		Hi there\n
-		%s emailed you using your site. His/her address is %s.\n
-		\n
-		His/her address is:\n
-		%s\n
-		\n
-		Message:\n
-		%s
-		\n
-		\n
-		Reply to this email to respond!\n
-		\n
-		Have a great day!
-	",
+	"Hi there\n
+%s emailed you using your site. His/her address is %s.\n
+\n
+His/her address is:\n
+%s\n
+\n
+Message:\n
+%s
+\n
+\n
+Reply to this email to respond!\n
+\n
+Have a great day!",
 	$name, $email, $address, $message);
 }
 
@@ -175,12 +173,16 @@ function btn_nicole_has_error() {
 function btn_nicole_send_email() {
 	$to_email = get_bloginfo('admin_email');
 
-	$name = maybe_form('NAME');
-	$email = maybe_form('EMAIL');
+	$name = maybe_form('NAME', false);
+	$email = maybe_form('EMAIL', false);
 	$address = maybe_form('ADDRESS');
 	$subject = maybe_form('SUBJECT', 'Message on BTNPetCare.com');
 	$form_id = maybe_form('FORM_ID', 'Contact Form');
-	$message = maybe_form('MESSAGE');
+	$message = maybe_form('MESSAGE', false);
+
+	if (!$name || !$email || !$message) {
+		return btn_nicole_set_error('Please fill in all of the fields');
+	}
 
 	$mail = wp_mail($to_email, $subject, btn_nicole_email_message($name, $address, $email, $message), array('Reply-To' => $email, 'From' => sprintf('%s <%s>', $name, $email)));
 
