@@ -123,4 +123,73 @@ add_action( 'wp_enqueue_scripts', 'btn_nicole_scripts' );
 /**
  * Load ACF Configuration
  */
+
+function maybe_form($name, $default = '') {
+	return isset($_POST[$name]) ? $_POST[$name] : $default;
+}
+
+function btn_nicole_email_message($name, $address, $email, $message) {
+	return sprintf(
+	"
+		Hi there\n
+		%s emailed you using your site. His/her address is %s.\n
+		\n
+		His/her address is:\n
+		%s\n
+		\n
+		Message:\n
+		%s
+		\n
+		\n
+		Reply to this email to respond!\n
+		\n
+		Have a great day!
+	",
+	$name, $email, $address, $message);
+}
+
+$btn_nicole_error = false;
+
+function btn_nicole_set_error($error) {
+	global $btn_nicole_error;
+	$btn_nicole_error = $error;
+}
+
+function btn_nicole_clear_error() {
+	global $btn_nicole_error;
+	$btn_nicole_error = false;
+}
+
+function btn_nicole_get_error() {
+	global $btn_nicole_error;
+	if ($btn_nicole_error === false) return;
+
+	return (string) $btn_nicole_error;
+}
+
+function btn_nicole_has_error() {
+	global $btn_nicole_error;
+	return $btn_nicole_error !== false;
+}
+
+function btn_nicole_send_email() {
+	$to_email = get_bloginfo('admin_email');
+
+	$name = maybe_form('NAME');
+	$email = maybe_form('EMAIL');
+	$address = maybe_form('ADDRESS');
+	$subject = maybe_form('SUBJECT', 'Message on BTNPetCare.com');
+	$form_id = maybe_form('FORM_ID', 'Contact Form');
+	$message = maybe_form('MESSAGE');
+
+	$mail = wp_mail($to_email, $subject, btn_nicole_email_message($name, $address, $email, $message), array('Reply-To' => $email, 'From' => sprintf('%s <%s>', $name, $email)));
+
+	btn_nicole_set_error('Thanks for your email!');
+
+}
+
+if (maybe_form('DO', false) && maybe_form('RANDO_1234556') === '') {
+	add_action('after_setup_theme', 'btn_nicole_send_email');
+}
+
 require get_template_directory() . '/inc/acf.php';
